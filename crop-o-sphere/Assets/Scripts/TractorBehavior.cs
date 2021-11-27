@@ -41,7 +41,7 @@ public class TractorBehavior : MonoBehaviour
         (xAxis, yAxis) = CollisionLogic(xAxis, yAxis);
         float dist = yAxis * maxSpeed * Time.fixedDeltaTime;
 
-        sphere.RotateSphere(transform, - xAxis * maxAngle * Time.fixedDeltaTime, dist);
+        sphere.RotateSphere(transform, -xAxis * maxAngle * Time.fixedDeltaTime, dist);
         RotateWheels(xAxis * maxAngle, dist);
 
         currentYSpeed = dist;
@@ -51,8 +51,6 @@ public class TractorBehavior : MonoBehaviour
     {
         foreach (GameObject wheel in frontWheels)
         {
-            // wheel.transform.RotateAround(wheel.transform.position, wheel.transform.up, turnAngle);
-            // wheel.transform.rotation.SetAxisAngle(wheel.transform.up, turnAngle);
             wheel.transform.RotateAround(wheel.transform.position, wheel.transform.up, -(dist / wheelLength) * 180);
         }
         foreach (GameObject wheel in backWheels)
@@ -64,22 +62,30 @@ public class TractorBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Debug.Log(other.gameObject.name);
-        if (other.gameObject != sphere.gameObject)
+
+        if (other.gameObject.tag == "noHit")
+        {
+            Debug.Log(other.gameObject.name);
+
+            Interactable interact = other.gameObject.GetComponent<Interactable>();
+            if (interact != null) { interact.OnCollideWith(); }
+            else { Debug.Log("Couldn't find interactable in gameObject"); }
+
+            // do something like open menu
+        }
+
+        else if (other.gameObject != sphere.gameObject)
         {
             isColliding = true;
             ySpeedWhenCollided = currentYSpeed;
         }
 
-        if (other.gameObject.tag == "building")
-        {
-            // do something like open menu
-        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         // Debug.Log(other.gameObject.name);
-        if (other.gameObject != sphere.gameObject)
+        if (other.gameObject != sphere.gameObject && other.gameObject.tag != "noHit")
         {
             isColliding = true;
         }
@@ -88,7 +94,17 @@ public class TractorBehavior : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Debug.Log(other.gameObject.name);
-        if (other.gameObject != sphere.gameObject)
+
+        if (other.gameObject.tag == "noHit")
+        {
+            Interactable interact = other.gameObject.GetComponent<Interactable>();
+            if (interact != null) { interact.OnCollideWith(); }
+            else { Debug.Log("Couldn't find interactable in gameObject"); }
+
+            // do something like close menu
+        }
+
+        else if (other.gameObject != sphere.gameObject)
         {
             isColliding = false;
         }

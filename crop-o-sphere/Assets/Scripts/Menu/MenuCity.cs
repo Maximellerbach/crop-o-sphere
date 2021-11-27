@@ -5,11 +5,12 @@ using UnityEngine;
 public class MenuCity : MonoBehaviour
 {
     public bool placing = false;
+    public bool valid = false;
     private GameObject goPlacing;
     private Collider goCol;
     public void PlaceItem(GameObject gameObject, Transform parent)
     {
-        if (placing == true) { return; }
+        if (placing == true) { Destroy(goPlacing); valid = false; }
         placing = true;
 
         goPlacing = Instantiate(gameObject);
@@ -23,11 +24,12 @@ public class MenuCity : MonoBehaviour
     {
         goCol.enabled = true;
         placing = false;
+        valid = false;
     }
 
     void Update()
     {
-        if (placing == false) { return;}
+        if (placing == false) { return; }
 
         Vector3 mouse = Input.mousePosition;
         bool mouseClick = Input.GetMouseButtonDown(0);
@@ -38,10 +40,12 @@ public class MenuCity : MonoBehaviour
             if (hit.collider.gameObject.name == "Sphere")
             {
                 goPlacing.transform.position = hit.point;
-                goPlacing.transform.rotation = Quaternion.FromToRotation (goPlacing.transform.forward, hit.normal) * goPlacing.transform.rotation;
+                goPlacing.transform.rotation = Quaternion.FromToRotation(goPlacing.transform.forward, hit.normal) * goPlacing.transform.rotation;
+                valid = true;
             }
+            else { valid = false; }
         }
-        if (mouseClick && Vector3.Distance(goPlacing.transform.position, Vector3.zero) < 200) // TODO: check whether the location is valid
+        if (mouseClick && valid) // TODO: check whether the location is valid
         {
             DonePlacing();
         }
