@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TractorBehavior : MonoBehaviour
 {
-    public Sphere sphere;
+    Sphere sphere;
+    Rigidbody rb;
+    public GameObject sphereObject;
     public GameObject[] frontWheels;
     public GameObject[] backWheels;
 
@@ -18,12 +20,16 @@ public class TractorBehavior : MonoBehaviour
     private float currentXSpeed = 0.0f;
     private float currentYSpeed = 0.0f;
 
-    private float wheelLength = 3.14f;
-    private float maxAngle = 30f;
+    private static float distFrontWheel = 1f;
+    private static float wheelLength = 3.14f;
+    private static float maxAngle = 60f;
+    private static float maxSpeed = 10f;
 
     void Start()
     {
         // init variables
+        rb = gameObject.GetComponent<Rigidbody>();
+        sphere = sphereObject.GetComponent<Sphere>();
         lastPos = transform.position;
     }
 
@@ -34,48 +40,32 @@ public class TractorBehavior : MonoBehaviour
         float yAxis = Input.GetAxis("Vertical");
 
         (xAxis, yAxis) = CollisionLogic(xAxis, yAxis);
+        float dist = yAxis * maxSpeed * Time.fixedDeltaTime;
 
+        sphere.RotateSphere(transform, - xAxis * maxAngle * Time.fixedDeltaTime, dist);
+        RotateWheels(xAxis * maxAngle, dist);
 
-    }
-
-    Vector3 GetRotatePoint(float xAxis)
-    {
-        float turnAngle = xAxis * maxAngle;
-        Vector3 basePoint = Vector3.zero;
-
-        if (xAxis < 0.1)
-        {
-            
-        }
-        else if (xAxis > 0.1)
-        {
-
-        }
-        else
-        {
-
-        }
-
-
-        return basePoint;
-
+        // currentXSpeed = 
+        currentYSpeed = dist;
     }
 
     void RotateWheels(float turnAngle, float dist)
     {
         foreach (GameObject wheel in frontWheels)
         {
-            wheel.transform.RotateAround(wheel.transform.position, wheel.transform.up, turnAngle);
-            wheel.transform.RotateAround(wheel.transform.position, wheel.transform.right, dist / wheelLength);
+            // wheel.transform.RotateAround(wheel.transform.position, wheel.transform.up, turnAngle);
+            // wheel.transform.rotation.SetAxisAngle(wheel.transform.up, turnAngle);
+            wheel.transform.RotateAround(wheel.transform.position, wheel.transform.up, -(dist / wheelLength) * 180);
         }
         foreach (GameObject wheel in backWheels)
         {
-            wheel.transform.RotateAround(wheel.transform.position, wheel.transform.right, dist / wheelLength);
+            wheel.transform.RotateAround(wheel.transform.position, wheel.transform.up, -(dist / wheelLength) * 180);
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
+        // Debug.Log(other.gameObject.name);
         if (other.gameObject != sphere.gameObject)
         {
             isColliding = true;
@@ -84,8 +74,18 @@ public class TractorBehavior : MonoBehaviour
         }
     }
 
-    private void OnCollisionLeave(Collision other)
+    private void OnTriggerStay(Collider other)
     {
+        // Debug.Log(other.gameObject.name);
+        if (other.gameObject != sphere.gameObject)
+        {
+            isColliding = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // Debug.Log(other.gameObject.name);
         if (other.gameObject != sphere.gameObject)
         {
             isColliding = false;
@@ -94,18 +94,18 @@ public class TractorBehavior : MonoBehaviour
 
     (float, float) CollisionLogic(float xAxis, float yAxis)
     {
+        Debug.Log(ySpeedWhenCollided);
         if (isColliding)
         {
-            if (ySpeedWhenCollided <= 0)
+            if (ySpeedWhenCollided < 0)
             {
                 if (yAxis < 0) { yAxis = 0; }
             }
             else
             {
-                if (yAxis > 0) { yAxis = 0; }
+                if (yAxis >= 0) { yAxis = 0; }
             }
         }
         return (xAxis, yAxis);
     }
-
 }

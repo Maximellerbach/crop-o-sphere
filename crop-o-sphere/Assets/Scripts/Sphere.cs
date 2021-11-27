@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Sphere : MonoBehaviour
 {
-    
 
-    // Start is called before the first frame update
-    void Start()
+    public void RotateSphere(Transform t, float rot, float dist)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.RotateAround(transform.position, t.up, rot);
+        transform.RotateAround(transform.position, t.right, dist);
+        transform.position = Vector3.zero;
+        // if (rot != 0)
+        // {
+        //     transform.RotateAround(transform.position, t.up, rot);
+        // }
+        // else
+        // {
+        //     transform.RotateAround(transform.position, t.right, dist);
+        // }
+        // if (basePoint.x > 0)
+        // {
+        //     transform.RotateAround(transform.position, t.position + basePoint, dist);
+        // }
+        // else
+        // {
+        //     transform.RotateAround(transform.position, t.position + basePoint, -dist);
+        // }
     }
 }
