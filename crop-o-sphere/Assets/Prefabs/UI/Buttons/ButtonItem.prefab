@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5453033488278866844}
   - component: {fileID: 7903620849040281412}
   m_Layer: 5
-  m_Name: LandButton
+  m_Name: ButtonItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,8 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3d2b53e73f70d42869d739e6d908ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 2075391849450772176, guid: 0da6c88a4469f2d4dadd90b30dd0a2d0, type: 3}
-  sphere: {fileID: 0}
+  item: {fileID: 0}
 --- !u!114 &3054491990153770412
 MonoBehaviour:
   m_ObjectHideFlags: 0
