@@ -24,6 +24,7 @@ public class UpdateMission : MonoBehaviour
         text = gameObject.GetComponentInChildren<Text>();
         UpdateText();
     }
+    private void OnEnable() { Start(); }
 
     public void SetCity(City _city)
     {

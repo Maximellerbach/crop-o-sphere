@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (timeUntilCycle > 0) {timeUntilCycle -= Time.deltaTime; }
+        if (timeUntilCycle > 0) { timeUntilCycle -= Time.deltaTime; }
         else { timeUntilCycle = GlobalState.cycleTime; OnEndOfCycle(); }
     }
 
@@ -73,7 +73,9 @@ public class Inventory : MonoBehaviour
 
     public int GetPriceByIndex(int index)
     {
-        return foods[index].Price;
+        if (foods.Length > index) { return foods[index].Price; }
+        Debug.LogError("Could not find " + index.ToString());
+        return -1;
     }
 
     public int GetPrice(string foodType)
