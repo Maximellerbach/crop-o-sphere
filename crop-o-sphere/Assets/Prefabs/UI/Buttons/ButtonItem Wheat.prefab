@@ -103,5 +103,9 @@ PrefabInstance:
       propertyPath: item
       value: 
       objectReference: {fileID: 3436701570910398733, guid: 7897450f4eeb64461a674ff42c8e64e0, type: 3}
+    - target: {fileID: 6692281652031036412, guid: a4f4bf3d3121c9b48a53c06cec6f7ddb, type: 3}
+      propertyPath: name
+      value: Wheat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4f4bf3d3121c9b48a53c06cec6f7ddb, type: 3}

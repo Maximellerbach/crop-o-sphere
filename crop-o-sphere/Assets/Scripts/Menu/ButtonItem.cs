@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonItem : MonoBehaviour
 {
     public GameObject item;
+    public string name = "";
     Transform sphere;
     MenuFarm menuFarm; 
 
@@ -16,10 +17,7 @@ public class ButtonItem : MonoBehaviour
 
     public void OnPress()
     {
-        menuFarm.PlaceItem(item, sphere);
-
-        // for the moment, just place the item
-        // GameObject go = Instantiate(item);
+        menuFarm.PlaceItem(name, item, sphere);
     }
 
 }
