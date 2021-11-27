@@ -225,8 +225,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  rCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   offx: 20
   offy: 20
+  offr: 40
   scale: 0.1
 --- !u!1 &2473387193364432851
 GameObject:
@@ -662,6 +669,7 @@ GameObject:
   - component: {fileID: 1205587899031417582}
   - component: {fileID: 4823029665731293738}
   - component: {fileID: -8089142597495082656}
+  - component: {fileID: 5002456417651269596}
   m_Layer: 0
   m_Name: Tractor
   m_TagString: Untagged
@@ -733,3 +741,15 @@ MonoBehaviour:
   backWheels:
   - {fileID: 4546799235971788764}
   - {fileID: 4129346406439949345}
+--- !u!114 &5002456417651269596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8331230489078072361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52b920608d196a43a58f97e99a56266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

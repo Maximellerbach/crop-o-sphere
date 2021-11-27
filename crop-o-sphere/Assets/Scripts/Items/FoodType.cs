@@ -1,7 +1,7 @@
 public enum FoodType
     {
-        Wheat,
-        Apple,
-        Potato,
-        Meat,
+        Wheat = 0,
+        Apple = 1,
+        Potato = 2,
+        Meat = 3,
     }
