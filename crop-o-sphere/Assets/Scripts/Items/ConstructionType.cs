@@ -1,6 +1,6 @@
 public enum ConstructionType
     {
-        Field,
-        Enclosure,
-        Tree,
+        Field = 0,
+        Enclosure = 0,
+        Tree = 0,
     }
