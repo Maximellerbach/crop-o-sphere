@@ -157,6 +157,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 354998346770136919, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 913628e6690b741a4b5d7242bba269e6, type: 2}
     - target: {fileID: 1878198925033517027, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -205,6 +209,10 @@ PrefabInstance:
       propertyPath: menuHandler
       value: 
       objectReference: {fileID: 658516688}
+    - target: {fileID: 2499690808706297178, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8dffa8ba923df3479c82a703fe004b1, type: 2}
     - target: {fileID: 4131899714160597069, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
       propertyPath: menuCity
       value: 
@@ -217,6 +225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Globe
       objectReference: {fileID: 0}
+    - target: {fileID: 5073669746382393866, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9ba78077a8cb4761817189cd12eae7b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
 --- !u!1001 &2010211305
