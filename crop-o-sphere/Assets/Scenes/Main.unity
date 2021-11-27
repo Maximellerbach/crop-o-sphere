@@ -559,10 +559,6 @@ PrefabInstance:
       propertyPath: menuHandler
       value: 
       objectReference: {fileID: 658516688}
-    - target: {fileID: 3505497146630560240, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
-      propertyPath: m_Radius
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 4131899714160597069, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
       propertyPath: menuCity
       value: 
@@ -619,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 160568072205396230, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 160568072205396230, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1027,7 +1023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3863704626135171753, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.000366
+      value: -12.000305
       objectReference: {fileID: 0}
     - target: {fileID: 3863704626135171753, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1439,5 +1435,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
