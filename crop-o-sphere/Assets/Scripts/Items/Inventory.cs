@@ -71,6 +71,11 @@ public class Inventory : MonoBehaviour
         return 0;
     }
 
+    public int GetPriceByIndex(int index)
+    {
+        return foods[index].Price;
+    }
+
     public int GetPrice(string foodType)
     {
         foreach (Food f in foods)
