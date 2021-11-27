@@ -16,7 +16,7 @@ public class CameraHandler : MonoBehaviour
     public float offy = 35f;
     public float offr = 40f;
     public float scale = 0.1f;
-    private float counter = 0.0f;
+    private float counter = 1.0f;
 
     void Start()
     {
