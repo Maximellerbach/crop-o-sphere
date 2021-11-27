@@ -41,7 +41,11 @@ public class City : MonoBehaviour, Interactable
 
     public void ValidateMission(int index)
     {
-        // first check if the mission can be completed
+
+        // then check if the mission was completed
+        if (validated[index] == true) {return; }
+
+        // then check if the mission can be completed
         int nObj = missions[index];
 
         if (inventory.GetQuantityByIndex(index) - nObj < 0) { return; }

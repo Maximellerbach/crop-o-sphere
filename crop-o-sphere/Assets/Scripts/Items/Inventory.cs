@@ -14,7 +14,6 @@ public class Inventory : MonoBehaviour
         foods[1] = new Food(FoodType.Potato, GlobalState.potatoPrice, GlobalState.tilePotatoPrice, GlobalState.potato, 0, 0);
         foods[2] = new Food(FoodType.Apple, GlobalState.applePrice, GlobalState.tileApplePrice, GlobalState.apple, 0, 0);
         foods[3] = new Food(FoodType.Meat, GlobalState.meatPrice, GlobalState.tileMeatPrice, GlobalState.meat, 0, 1);
-
     }
 
     void Update()
