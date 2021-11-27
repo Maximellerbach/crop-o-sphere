@@ -64,7 +64,7 @@ public class TractorBehavior : MonoBehaviour
         if (other.gameObject.tag == "noHit")
         {
             Interactable interact = other.gameObject.GetComponent<Interactable>();
-            if (interact != null) { interact.OnCollideWith(); }
+            if (interact != null) { interact.OnEnterCollideWith(); }
             else { Debug.Log("Couldn't find interactable in gameObject"); }
 
             // do something like open menu
@@ -91,7 +91,7 @@ public class TractorBehavior : MonoBehaviour
         if (other.gameObject.tag == "noHit")
         {
             Interactable interact = other.gameObject.GetComponent<Interactable>();
-            if (interact != null) { interact.OnCollideWith(); }
+            if (interact != null) { interact.OnExitCollideWith(); }
             else { Debug.Log("Couldn't find interactable in gameObject"); }
 
             // do something like close menu

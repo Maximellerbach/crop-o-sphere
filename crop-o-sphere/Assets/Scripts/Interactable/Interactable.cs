@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface Interactable
 {
-    void OnCollideWith();
+    void OnEnterCollideWith();
+    void OnExitCollideWith();
 }

@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wheat : MonoBehaviour, Interactable
+public class Potato : MonoBehaviour
 {
-
     GameObject tractor;
     Inventory inventory;
-    private float timeUntilHarvest = GlobalState.timeGrowWheat;
+    private float timeUntilHarvest = GlobalState.timeGrowPotato;
     private bool isGrown = false;
 
     void Start()
@@ -25,7 +24,7 @@ public class Wheat : MonoBehaviour, Interactable
         else if (isGrown == false)
         {
             isGrown = true;
-            timeUntilHarvest = GlobalState.timeGrowWheat;
+            timeUntilHarvest = GlobalState.timeGrowPotato;
         }
     }
 
@@ -34,10 +33,10 @@ public class Wheat : MonoBehaviour, Interactable
         if (isGrown)
         {
             isGrown = false;
-            inventory.AddQuantity("Wheat", 1);
-            Debug.Log(inventory.GetQuantity("Wheat"));
+            inventory.AddQuantity("Potato", 1);
+            Debug.Log(inventory.GetQuantity("Potato"));
         }
 
     }
-    public void OnExitCollideWith() { return; }
+    public void onExitCollideWith() { return; }
 }
