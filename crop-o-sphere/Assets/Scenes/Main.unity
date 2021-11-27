@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 370483758297534901, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
       propertyPath: offr
-      value: 75
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 370483758297534901, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
       propertyPath: offx

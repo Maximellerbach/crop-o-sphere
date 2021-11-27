@@ -38,7 +38,7 @@ public class CameraHandler : MonoBehaviour
             float yp = xPosCurve.Evaluate(counter) * offy;
             Vector3 new_pos = basePos - new Vector3(0, xp, yp);
             transform.position = new_pos;
-            transform.rotation = baseRot * Quaternion.AngleAxis(rCurve.Evaluate(counter) * -30f, Vector3.right);
+            transform.rotation = baseRot * Quaternion.AngleAxis(rCurve.Evaluate(counter) * - offr, Vector3.right);
         }
         // Debug.Log(scroll);
     }
