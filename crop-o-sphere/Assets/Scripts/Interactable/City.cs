@@ -54,9 +54,9 @@ public class City : MonoBehaviour, Interactable
         validated[index] = true;
     }
 
-    void ProcessNumberCitizen()
+    void ProcessNumberCitizen(int city_score)
     {
-
+        citizen = citizen + (int)((1.0f/10.0f) * city_score * citizen);
     }
 
     public void OnEnterCollideWith()
@@ -79,6 +79,7 @@ public class City : MonoBehaviour, Interactable
             else { city_score -= 1; }
         }
         GenerateMission();
+        ProcessNumberCitizen(city_score);
     }
 
 }
