@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class MenuFarm : MonoBehaviour
 {
-    public bool placing = false;
-    public bool valid = false;
+    GameObject tractor;
+    Inventory inventory;
+
+    private bool placing = false;
+    private bool valid = false;
     private GameObject goPlacing;
+    private string goFoodType;
     private Collider goCol;
-    public void PlaceItem(GameObject gameObject, Transform parent)
+
+    void Start()
     {
-        if (placing == true) { Destroy(goPlacing); valid = false; }
+        tractor = GameObject.FindGameObjectWithTag("tractor");
+        inventory = tractor.GetComponent<Inventory>();
+    }
+
+    public void PlaceItem(string foodType, GameObject gameObject, Transform parent)
+    {
+        if (!inventory.HasEnoughRessources(foodType)) {return; }
+        if (placing == true && valid == false) { Destroy(goPlacing); valid = false; }
         placing = true;
 
+        goFoodType = foodType;
         goPlacing = Instantiate(gameObject);
         goPlacing.transform.SetParent(parent);
         goCol = goPlacing.GetComponentInChildren<Collider>();
@@ -22,6 +35,7 @@ public class MenuFarm : MonoBehaviour
 
     public void DonePlacing()
     {
+        inventory.ApplyTile(goFoodType);
         goCol.enabled = true;
         placing = false;
         valid = false;
@@ -45,6 +59,8 @@ public class MenuFarm : MonoBehaviour
             }
             else { valid = false; }
         }
+        else { valid = false; }
+
         if (mouseClick && valid) // TODO: check whether the location is valid
         {
             DonePlacing();

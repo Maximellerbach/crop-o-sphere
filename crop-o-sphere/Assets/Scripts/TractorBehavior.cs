@@ -61,12 +61,8 @@ public class TractorBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Debug.Log(other.gameObject.name);
-
         if (other.gameObject.tag == "noHit")
         {
-            Debug.Log(other.gameObject.name);
-
             Interactable interact = other.gameObject.GetComponent<Interactable>();
             if (interact != null) { interact.OnCollideWith(); }
             else { Debug.Log("Couldn't find interactable in gameObject"); }
@@ -84,7 +80,6 @@ public class TractorBehavior : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        // Debug.Log(other.gameObject.name);
         if (other.gameObject != sphere.gameObject && other.gameObject.tag != "noHit")
         {
             isColliding = true;
@@ -93,8 +88,6 @@ public class TractorBehavior : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // Debug.Log(other.gameObject.name);
-
         if (other.gameObject.tag == "noHit")
         {
             Interactable interact = other.gameObject.GetComponent<Interactable>();
