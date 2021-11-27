@@ -213,6 +213,10 @@ PrefabInstance:
       propertyPath: menuHandler
       value: 
       objectReference: {fileID: 658516688}
+    - target: {fileID: 2499690808706297178, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8dffa8ba923df3479c82a703fe004b1, type: 2}
     - target: {fileID: 4131899714160597069, guid: 41735050c8ff5f0449a906f682f56cf2, type: 3}
       propertyPath: menuCity
       value: 
