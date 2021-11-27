@@ -6,6 +6,7 @@ public class City : MonoBehaviour, Interactable
 {
     public MenuHandler menuHandler;
     public MenuCity menuCity;
+    // public float 
     public int citizen;
     public int city_score = 0;
     public int[] missions = new int[4];
@@ -17,6 +18,11 @@ public class City : MonoBehaviour, Interactable
 
         citizen = (int)Random.Range(50, 100);
         GenerateMission();
+    }
+
+    void Update()
+    {
+        
     }
 
 
@@ -37,4 +43,10 @@ public class City : MonoBehaviour, Interactable
     {
         menuHandler.OnLeaveCity();
     }
+
+    void OnEndOfCycle()
+    {
+        GenerateMission();
+    }
+
 }

@@ -53,6 +53,11 @@ public class Inventory : MonoBehaviour
         Debug.Log("Could not find " + foodType);
     }
 
+    public int GetQuantityByIndex(int index)
+    {
+        return foods[index].Quantity;
+    }
+
     public int GetQuantity(string foodType)
     {
         foreach (Food f in foods)
