@@ -22,6 +22,9 @@
 # Visual Studio cache directory
 .vs/
 
+# Rider
+.idea
+
 # Gradle cache directory
 .gradle/
 
@@ -59,4 +62,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Package Cache
-/crop-o-sphere/Library/PackageCache
+# /crop-o-sphere/Library/PackageCache

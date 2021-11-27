@@ -292,9 +292,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 160568073667362493, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
+      propertyPath: menuCity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 870823595956034046, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
       propertyPath: m_Spacing.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424205398671389593, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
+      propertyPath: m_Name
+      value: menuFarm
       objectReference: {fileID: 0}
     - target: {fileID: 3046121119337938156, guid: fde55a1d7d3e5cb4a9cab450d616ca1e, type: 3}
       propertyPath: m_AnchorMax.y
