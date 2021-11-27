@@ -109,7 +109,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (Food f in foods)
         {
-            money += f.PassiveIncome;
+            f.Quantity += f.PassiveIncome;
         }
 
         // Debug.Log(money);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightRevolution : MonoBehaviour
 {
-    public float speed = 1;
+    public float speed = 360f / GlobalState.dayTime;
     public float angle = 0.0f;
 
     // Update is called once per frame

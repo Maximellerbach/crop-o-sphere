@@ -100,6 +100,10 @@ PrefabInstance:
       value: ButtonItem Apple
       objectReference: {fileID: 0}
     - target: {fileID: 6692281652031036412, guid: a4f4bf3d3121c9b48a53c06cec6f7ddb, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 3780793668044769991, guid: 6a6849416cc3afc439511f6cb3832db1, type: 3}
+    - target: {fileID: 6692281652031036412, guid: a4f4bf3d3121c9b48a53c06cec6f7ddb, type: 3}
       propertyPath: name
       value: Apple
       objectReference: {fileID: 0}

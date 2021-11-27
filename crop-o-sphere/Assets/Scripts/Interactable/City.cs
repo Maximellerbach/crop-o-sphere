@@ -9,7 +9,7 @@ public class City : MonoBehaviour, Interactable
 
     public MenuHandler menuHandler;
     public MenuCity menuCity;
-    public float timeUntilCycle = GlobalState.cycleTime;
+    public float timeUntilRes = GlobalState.dayTime * GlobalState.nbDays;
     public int citizen;
     public int city_score = 0;
     public int[] missions;
@@ -26,8 +26,8 @@ public class City : MonoBehaviour, Interactable
 
     void Update()
     {
-        if (timeUntilCycle > 0) { timeUntilCycle -= Time.deltaTime; }
-        else { timeUntilCycle = GlobalState.cycleTime; OnEndOfCycle(); }
+        if (timeUntilRes > 0) { timeUntilRes -= Time.deltaTime; }
+        else { timeUntilRes = GlobalState.dayTime; OnEndOfCycle(); }
     }
 
 

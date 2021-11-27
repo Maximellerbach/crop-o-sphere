@@ -20,8 +20,16 @@ public class TextUpdater : MonoBehaviour
 
     void Update()
     {
-        int q = inventory.GetQuantityByIndex(index);
-        text.text = q.ToString();
+        if (index == -1)
+        {
+            int q = inventory.money;
+            text.text = q.ToString();
+        }
+        else
+        {
+            int q = inventory.GetQuantityByIndex(index);
+            text.text = q.ToString();
+        }
     }
 
 }

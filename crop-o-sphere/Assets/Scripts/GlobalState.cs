@@ -5,7 +5,9 @@ using UnityEngine;
 public static class GlobalState
 {
     public static int baseMoney = 10;
-    public static float cycleTime = 180.0f;
+    public static float cycleTime = 10.0f;
+    public static float dayTime = 60.0f;
+    public static float nbDays = 2.0f;
     public static float timeGrowWheat = 45.0f;
     public static float timeGrowPotato = 45.0f;
 
@@ -23,7 +25,7 @@ public static class GlobalState
 
     // passive consumption
     public static int passiveConsumptionMeat = 1;
-    public static int passiveIncome = 5;
+    public static int passiveIncome = 1;
 
     // default values
     public static int wheat = 10;
