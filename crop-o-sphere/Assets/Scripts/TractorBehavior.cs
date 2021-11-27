@@ -17,7 +17,6 @@ public class TractorBehavior : MonoBehaviour
 
 
     private Vector3 lastPos;
-    private float currentXSpeed = 0.0f;
     private float currentYSpeed = 0.0f;
 
     private static float distFrontWheel = 1f;
@@ -45,7 +44,6 @@ public class TractorBehavior : MonoBehaviour
         sphere.RotateSphere(transform, - xAxis * maxAngle * Time.fixedDeltaTime, dist);
         RotateWheels(xAxis * maxAngle, dist);
 
-        // currentXSpeed = 
         currentYSpeed = dist;
     }
 
@@ -69,8 +67,12 @@ public class TractorBehavior : MonoBehaviour
         if (other.gameObject != sphere.gameObject)
         {
             isColliding = true;
-            xSpeedWhenCollided = currentXSpeed;
             ySpeedWhenCollided = currentYSpeed;
+        }
+
+        if (other.gameObject.tag == "building")
+        {
+            // do something like open menu
         }
     }
 
@@ -94,7 +96,6 @@ public class TractorBehavior : MonoBehaviour
 
     (float, float) CollisionLogic(float xAxis, float yAxis)
     {
-        Debug.Log(ySpeedWhenCollided);
         if (isColliding)
         {
             if (ySpeedWhenCollided < 0)
