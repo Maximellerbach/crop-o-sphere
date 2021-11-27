@@ -5,9 +5,9 @@ using UnityEngine;
 public static class GlobalState
 {
     public static int baseMoney = 10;
-    public static float cycleTime = 180.0f;
-    public static float timeGrowWheat = 10.0f;
-    public static float timeGrowPotato = 60.0f;
+    public static float cycleTime = 60.0f;
+    public static float timeGrowWheat = 45.0f;
+    public static float timeGrowPotato = 45.0f;
 
     // tile prices
     public static int tileWheatPrice = 3;
