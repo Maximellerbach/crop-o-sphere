@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public int GetValue(string foodType)
+    public int GetQuantity(string foodType)
     {
         foreach (Food f in foods)
         {
@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour
         return 0;
     }
 
-    public void AddValue(string foodType, int number)
+    public void AddQuantity(string foodType, int number)
     {
         
         foreach (Food f in foods)

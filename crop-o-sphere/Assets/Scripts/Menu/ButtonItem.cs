@@ -5,12 +5,13 @@ using UnityEngine;
 public class ButtonItem : MonoBehaviour
 {
     public GameObject item;
-    public Transform sphere; // where to put the item (parent)
+    Transform sphere;
     MenuFarm menuFarm; 
 
     void Start()
     {
         menuFarm = transform.GetComponentInParent<MenuFarm>();
+        sphere = GameObject.FindGameObjectWithTag("sphere").transform;
     }
 
     public void OnPress()

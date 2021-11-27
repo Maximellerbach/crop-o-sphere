@@ -34,7 +34,8 @@ public class Wheat : MonoBehaviour, Interactable
         if (isGrown)
         {
             isGrown = false;
-            inventory.AddValue("wheat", 1);
+            inventory.AddQuantity("Wheat", 1);
+            Debug.Log(inventory.GetQuantity("Wheat"));
         }
 
     }

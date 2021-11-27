@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - noHit
+  - tractor
+  - sphere
   layers:
   - Default
   - TransparentFX
