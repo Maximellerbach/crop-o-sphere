@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
                 foods[0].PassiveIncome -= f.PassiveConsumption;
                 f.PassiveIncome += 1;
                 money -= f.TilePrice;
-                Debug.Log(money);
+                // Debug.Log(money);
                 return;
             }
         }
@@ -87,6 +87,7 @@ public class Inventory : MonoBehaviour
             if (f.FoodType.ToString() == foodType)
             {
                 f.Quantity += number;
+                return;
             }
         }
         Debug.LogError("Could not find " + foodType);
@@ -99,7 +100,7 @@ public class Inventory : MonoBehaviour
             money += f.PassiveIncome;
         }
 
-        Debug.Log(money);
+        // Debug.Log(money);
 
     }
 }
