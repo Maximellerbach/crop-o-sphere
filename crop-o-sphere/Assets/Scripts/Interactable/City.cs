@@ -12,7 +12,7 @@ public class City : MonoBehaviour, Interactable
     public float timeUntilCycle = GlobalState.cycleTime;
     public int citizen;
     public int city_score = 0;
-    public int[] missions = new int[4];
+    public int[] missions;
     public bool[] validated = new bool[4];
 
     void Start()
@@ -26,8 +26,8 @@ public class City : MonoBehaviour, Interactable
 
     void Update()
     {
-        if (timeUntilCycle > 0 ) {timeUntilCycle -= Time.deltaTime;}
-        else {timeUntilCycle = GlobalState.cycleTime; OnEndOfCycle(); }
+        if (timeUntilCycle > 0) { timeUntilCycle -= Time.deltaTime; }
+        else { timeUntilCycle = GlobalState.cycleTime; OnEndOfCycle(); }
     }
 
 
@@ -39,17 +39,19 @@ public class City : MonoBehaviour, Interactable
         }
     }
 
-    void ValidateMission(int index)
+    public void ValidateMission(int index)
     {
         // first check if the mission can be completed
         int nObj = missions[index];
 
-        if (inventory.GetQuantityByIndex(index) - nObj < 0) {return;}
+        if (inventory.GetQuantityByIndex(index) - nObj < 0) { return; }
 
         int price = inventory.GetPriceByIndex(index);
         int tot_price = price * missions[index];
         inventory.money += tot_price;
         inventory.foods[index].Quantity -= nObj;
+
+        validated[index] = true;
     }
 
     void ProcessNumberCitizen()
@@ -59,6 +61,8 @@ public class City : MonoBehaviour, Interactable
 
     public void OnEnterCollideWith()
     {
+        if (missions == null) { Start(); }
+
         menuHandler.OnEnterCity();
         menuCity.SetCity(this);
     }
@@ -69,6 +73,11 @@ public class City : MonoBehaviour, Interactable
 
     void OnEndOfCycle()
     {
+        foreach (bool b in validated)
+        {
+            if (b) { city_score += 1; }
+            else { city_score -= 1; }
+        }
         GenerateMission();
     }
 

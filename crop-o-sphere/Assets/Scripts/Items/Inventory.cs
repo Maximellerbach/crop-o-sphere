@@ -10,10 +10,10 @@ public class Inventory : MonoBehaviour
     public Food[] foods = new Food[4];
     void Start()
     {
-        foods[0] = new Food(FoodType.Wheat, GlobalState.wheatPrice, GlobalState.tileWheatPrice, 0, 0, 0);
-        foods[1] = new Food(FoodType.Potato, GlobalState.potatoPrice, GlobalState.tilePotatoPrice, 0, 0, 0);
-        foods[2] = new Food(FoodType.Apple, GlobalState.applePrice, GlobalState.tileApplePrice, 0, 0, 0);
-        foods[3] = new Food(FoodType.Meat, GlobalState.meatPrice, GlobalState.tileMeatPrice, 0, 0, 1);
+        foods[0] = new Food(FoodType.Wheat, GlobalState.wheatPrice, GlobalState.tileWheatPrice, GlobalState.wheat, 0, 0);
+        foods[1] = new Food(FoodType.Potato, GlobalState.potatoPrice, GlobalState.tilePotatoPrice, GlobalState.potato, 0, 0);
+        foods[2] = new Food(FoodType.Apple, GlobalState.applePrice, GlobalState.tileApplePrice, GlobalState.apple, 0, 0);
+        foods[3] = new Food(FoodType.Meat, GlobalState.meatPrice, GlobalState.tileMeatPrice, GlobalState.meat, 0, 1);
 
     }
 
@@ -44,7 +44,7 @@ public class Inventory : MonoBehaviour
             if (f.FoodType.ToString() == foodType)
             {
                 foods[0].PassiveIncome -= f.PassiveConsumption;
-                f.PassiveIncome += 1;
+                f.PassiveIncome += GlobalState.passiveIncome;
                 money -= f.TilePrice;
                 // Debug.Log(money);
                 return;

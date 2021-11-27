@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6922149353704829881}
   - component: {fileID: 3746306735793424905}
   - component: {fileID: 7958248377392786836}
+  - component: {fileID: 6607894106199453386}
   m_Layer: 5
   m_Name: Mission
   m_TagString: Untagged
@@ -121,6 +122,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6607894106199453386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255592513356742927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610effa2c09c34848a219a6d9cc9364d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuCity: {fileID: 0}
+  foodType: 
+  index: 0
+  amount: 0
+  tot_price: 0
 --- !u!1 &6687202565250793595
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,4 +217,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Mission:'
