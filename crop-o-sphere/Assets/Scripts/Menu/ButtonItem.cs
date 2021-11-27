@@ -6,16 +6,16 @@ public class ButtonItem : MonoBehaviour
 {
     public GameObject item;
     public Transform sphere; // where to put the item (parent)
-    MenuCity menuCity; 
+    MenuFarm menuFarm; 
 
     void Start()
     {
-        menuCity = transform.GetComponentInParent<MenuCity>();
+        menuFarm = transform.GetComponentInParent<MenuFarm>();
     }
 
     public void OnPress()
     {
-        menuCity.PlaceItem(item, sphere);
+        menuFarm.PlaceItem(item, sphere);
 
         // for the moment, just place the item
         // GameObject go = Instantiate(item);

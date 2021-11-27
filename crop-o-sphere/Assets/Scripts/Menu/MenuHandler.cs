@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
 {
-    public bool menuCity = false;
+    public bool menuFarm = false;
     public bool menuStat = false;
 
 

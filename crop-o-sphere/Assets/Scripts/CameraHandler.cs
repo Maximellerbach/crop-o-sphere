@@ -12,9 +12,9 @@ public class CameraHandler : MonoBehaviour
     Vector3 basePos;
     Quaternion baseRot;
 
-    public float offx = 20f;
-    public float offy = 20f;
-    public float offr = 30f;
+    public float offx = 10f;
+    public float offy = 35f;
+    public float offr = 40f;
     public float scale = 0.1f;
     private float counter = 0.0f;
 

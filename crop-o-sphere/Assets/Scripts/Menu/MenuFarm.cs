@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuCity : MonoBehaviour
+public class MenuFarm : MonoBehaviour
 {
     public bool placing = false;
     public bool valid = false;

@@ -123,6 +123,8 @@ public class TractorBehavior : MonoBehaviour
                 if (yAxis >= 0) { yAxis = 0; }
             }
         }
+        if (yAxis == 0) { xAxis = 0; }
+        if (yAxis < 0) { xAxis = -xAxis; }
         return (xAxis, yAxis);
     }
 }
