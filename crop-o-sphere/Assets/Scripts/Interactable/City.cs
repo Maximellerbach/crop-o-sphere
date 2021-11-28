@@ -80,6 +80,7 @@ public class City : MonoBehaviour, Interactable
     {
         foreach (bool b in validated)
         {
+            city_score = 0;
             if (b) { city_score += 1; }
             else { city_score -= 1; }
         }

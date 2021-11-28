@@ -13,8 +13,8 @@ public static class GlobalState
 
     // tile prices
     public static int tileWheatPrice = 3;
-    public static int tilePotatoPrice = 5;
-    public static int tileApplePrice = 3;
+    public static int tilePotatoPrice = 3;
+    public static int tileApplePrice = 5;
     public static int tileMeatPrice = 10;
 
     // sell prices
