@@ -36,6 +36,7 @@ public class City : MonoBehaviour, Interactable
         for (int i = 0; i < 4; i++)
         {
             missions[i] = (int)Random.Range(citizen / 6, citizen / 4);
+            validated[i] = false;
         }
     }
 
