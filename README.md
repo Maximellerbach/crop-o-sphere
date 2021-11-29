@@ -4,7 +4,7 @@ Project for the GottaGoHack Hackathon, 42 hours of hack !
 Crop'O Shere is minimalistic looking game, where you are driving a tractor, on a small 3D planet.   
 When near your farm, by spending some money, you can create fields that will bring you a passive income of ressources,   
 Will will then need to sell those Ressources according to the food demand of different cities.   
-Every cycles (3 in-game days), the demand and city population is updated, forcing you to keep track of the demand of every city.
+Every cycles (2 in-game days), the demand and city population is updated, forcing you to keep track of the demand of every city.
 
 If you succeed to complete most of the demands of a given city, its population will increase by a proportionnal amount,   
 if not, the population will decrease and one day become empty (You lost the game).
