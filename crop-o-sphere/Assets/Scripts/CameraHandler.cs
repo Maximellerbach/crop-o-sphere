@@ -16,7 +16,7 @@ public class CameraHandler : MonoBehaviour
     public float offy = 35f;
     public float offr = 40f;
     public float scale = 0.1f;
-    private float counter = 1.0f;
+    private float counter = 0.0f;
 
     void Start()
     {
@@ -34,9 +34,9 @@ public class CameraHandler : MonoBehaviour
             if (counter > 1) { counter = 1; }
             else if (counter < 0) { counter = 0; }
 
-            float xp = xPosCurve.Evaluate(counter) * offx;
+            float xp = xPosCurve.Evaluate(counter) * - offx;
             float yp = xPosCurve.Evaluate(counter) * offy;
-            Vector3 new_pos = basePos - new Vector3(0, xp, yp);
+            Vector3 new_pos = basePos + new Vector3(0, xp, yp);
             transform.position = new_pos;
             transform.rotation = baseRot * Quaternion.AngleAxis(rCurve.Evaluate(counter) * - offr, Vector3.right);
         }

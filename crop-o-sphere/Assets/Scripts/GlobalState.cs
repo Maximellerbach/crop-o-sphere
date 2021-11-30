@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class GlobalState
 {
-    public static int baseMoney = 10;
     public static float cycleTime = 10.0f;
     public static float dayTime = 60.0f;
     public static float nbDays = 2.0f;
@@ -32,5 +31,6 @@ public static class GlobalState
     public static int potato = 10;
     public static int apple = 5;
     public static int meat = 3;
+    public static int baseMoney = 100;
 
 }

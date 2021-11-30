@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int money = GlobalState.baseMoney;
-    private float timeUntilCycle = GlobalState.cycleTime;
+    public int money;
+    private float timeUntilCycle;
     public Food[] foods = new Food[4];
     void Start()
     {
-        foods[0] = new Food(FoodType.Wheat, GlobalState.wheatPrice, GlobalState.tileWheatPrice, GlobalState.wheat, 0, 0);
-        foods[1] = new Food(FoodType.Potato, GlobalState.potatoPrice, GlobalState.tilePotatoPrice, GlobalState.potato, 0, 0);
-        foods[2] = new Food(FoodType.Apple, GlobalState.applePrice, GlobalState.tileApplePrice, GlobalState.apple, 0, 0);
-        foods[3] = new Food(FoodType.Meat, GlobalState.meatPrice, GlobalState.tileMeatPrice, GlobalState.meat, 0, 1);
+        money =  GlobalState.baseMoney;
+        timeUntilCycle = GlobalState.cycleTime;
+
+        foods[0] = new WheatFood().food;
+        foods[1] = new PotatoFood().food;
+        foods[2] = new AppleFood().food;
+        foods[3] = new MeatFood().food;
     }
 
     void Update()
