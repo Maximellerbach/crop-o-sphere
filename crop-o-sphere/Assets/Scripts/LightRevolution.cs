@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class LightRevolution : MonoBehaviour
 {
-    public float speed = 360f / GlobalState.dayTime;
-    public float angle = 0.0f;
+    private float speed;
 
-    // Update is called once per frame
+    void Start()
+    {
+        speed = 360f / GlobalState.dayTime;
+    }
     void FixedUpdate()
     {
         transform.RotateAround(transform.position, transform.up, speed * Time.fixedDeltaTime);

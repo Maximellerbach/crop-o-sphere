@@ -9,14 +9,16 @@ public class City : MonoBehaviour, Interactable
 
     public MenuHandler menuHandler;
     public MenuCity menuCity;
-    public float timeUntilRes = GlobalState.dayTime * GlobalState.nbDays;
-    public int citizen;
-    public int city_score = 0;
+    private float timeUntilReset;
+    private int citizen;
+    private int city_score = 0;
     public int[] missions;
     public bool[] validated = new bool[4];
 
     void Start()
     {
+        timeUntilReset = GlobalState.dayTime * GlobalState.nbDays;
+
         tractor = GameObject.FindGameObjectWithTag("tractor");
         inventory = tractor.GetComponent<Inventory>();
 
@@ -26,8 +28,8 @@ public class City : MonoBehaviour, Interactable
 
     void Update()
     {
-        if (timeUntilRes > 0) { timeUntilRes -= Time.deltaTime; }
-        else { timeUntilRes = GlobalState.dayTime; OnEndOfCycle(); }
+        if (timeUntilReset > 0) { timeUntilReset -= Time.deltaTime; }
+        else { timeUntilReset = GlobalState.dayTime; OnEndOfCycle(); }
     }
 
 
